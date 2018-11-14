@@ -40,19 +40,32 @@ namespace BatalhatorNavalator
             conexao = listener.Accept();
             // Cliente foi conectado
             Console.WriteLine("Client connected");
+            
+
             while (true)
             {
-                if (conexao.Poll(1000, SelectMode.SelectRead) && (conexao.Available == 0 || !conexao.Connected))
+                if (conexao.Connected)
+                {
+                    byte[] buff = new byte[1];
+                    if (conexao.Receive(buff) < 1)
+                    {
+                        Console.WriteLine("Desconectado");
+                        conexao = listener.Accept();
+                        // Cliente foi conectado
+                        Console.WriteLine("Client connected");
+                    }
+                else
+                    Console.WriteLine("Conectado");
+                }
+                else
                 {
                     Console.WriteLine("Desconectado");
                 }
-                Console.WriteLine("Conectado");
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
-
-            /*conexao.Shutdown(SocketShutdown.Both);
+            conexao.Shutdown(SocketShutdown.Both);
             conexao.Close();
-            Console.WriteLine("");*/
+            Console.WriteLine("");
 
             /*Console.WriteLine("Starting: Creating Socket object");
             Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -88,9 +101,41 @@ namespace BatalhatorNavalator
             conexao.Connect(ipEndPoint);
             Console.WriteLine("Successfully connected to {0}", conexao.RemoteEndPoint);
 
-            
-            
-            
+            while (true)
+            {
+                if (conexao.Connected)
+                {
+                    try
+                    {
+                        byte[] buff = new byte[1];
+                        conexao.Send(buff);
+                        Console.WriteLine("Conectado");
+                    }catch(SocketException ex)
+                    {
+                        Console.WriteLine("Desconectado");
+                        while (true)
+                        {
+                            try
+                            {
+                                conexao = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                                conexao.Connect(ipEndPoint);
+                                break;
+                            }
+                            catch (SocketException ex2)
+                            {
+                                Console.WriteLine("Falha ao conectar com o servidor");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Desconectado");
+                }
+                Thread.Sleep(1000);
+            }
+
+
             // Mostrar tela do jogo
 
             /*byte[] receivedBytes = new byte[2048];
