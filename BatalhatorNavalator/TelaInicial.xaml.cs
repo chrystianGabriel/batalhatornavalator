@@ -40,6 +40,16 @@ namespace BatalhatorNavalator
             conexao = listener.Accept();
             // Cliente foi conectado
             Console.WriteLine("Client connected");
+            while (true)
+            {
+                if (conexao.Poll(1000, SelectMode.SelectRead) && (conexao.Available == 0 || !conexao.Connected))
+                {
+                    Console.WriteLine("Desconectado");
+                }
+                Console.WriteLine("Conectado");
+                Thread.Sleep(1000);
+            }
+
             /*conexao.Shutdown(SocketShutdown.Both);
             conexao.Close();
             Console.WriteLine("");*/
@@ -78,15 +88,7 @@ namespace BatalhatorNavalator
             conexao.Connect(ipEndPoint);
             Console.WriteLine("Successfully connected to {0}", conexao.RemoteEndPoint);
 
-            while (true)
-            {
-                if (conexao.Poll(1000, SelectMode.SelectRead) && (conexao.Available == 0 || !conexao.Connected))
-                {
-                    Console.WriteLine("Desconectado");
-                }
-                Console.WriteLine("Conectado");
-                Thread.Sleep(1000);
-            }
+            
             
             
             // Mostrar tela do jogo
