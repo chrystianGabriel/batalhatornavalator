@@ -40,9 +40,9 @@ namespace BatalhatorNavalator
             conexao = listener.Accept();
             // Cliente foi conectado
             Console.WriteLine("Client connected");
-            conexao.Shutdown(SocketShutdown.Both);
+            /*conexao.Shutdown(SocketShutdown.Both);
             conexao.Close();
-            Console.WriteLine("");
+            Console.WriteLine("");*/
 
             /*Console.WriteLine("Starting: Creating Socket object");
             Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -80,14 +80,9 @@ namespace BatalhatorNavalator
 
             while (true)
             {
-                if (conexao.Poll(0, SelectMode.SelectRead))
+                if (conexao.Poll(1000, SelectMode.SelectRead) && (conexao.Available == 0 || !conexao.Connected))
                 {
-                    byte[] buff = new byte[1];
-                    if (conexao.Receive(buff, SocketFlags.Peek) == 0)
-                    {
-                        Console.WriteLine("Desconectado");
-                        break;
-                    }
+                    Console.WriteLine("Desconectado");
                 }
                 Console.WriteLine("Conectado");
                 Thread.Sleep(1000);
