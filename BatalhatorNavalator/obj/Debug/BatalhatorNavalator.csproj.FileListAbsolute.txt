@@ -1,0 +1,16 @@
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\bin\Debug\BatalhatorNavalator.exe.config
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\bin\Debug\BatalhatorNavalator.exe
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\bin\Debug\BatalhatorNavalator.pdb
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\bin\Debug\Control.Draggable.dll
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.csprojAssemblyReference.cache
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.Properties.Resources.resources
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.csproj.GenerateResource.cache
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.csproj.CoreCompileInputs.cache
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.csproj.CopyComplete
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.exe
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.pdb
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.TelaInicial.resources
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.Views.TelaCriarPartida.resources
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.Views.TelaDeAguardo.resources
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.Views.TelaConectarPartida.resources
+C:\Users\chrys\Documents\batalhatornavalator\BatalhatorNavalator\BatalhatorNavalator\obj\Debug\BatalhatorNavalator.TelaPosicionarBarcos.resources
