@@ -82,7 +82,7 @@
     <Compile Include="Views\TelaPosicionarBarcos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\.Designer.cs">
+	<Compile Include="Views\TelaPosicionarBarcos.Designer.cs">
       <DependentUpon>TelaPosicionarBarcos.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
