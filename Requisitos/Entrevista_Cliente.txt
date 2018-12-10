@@ -1,0 +1,41 @@
+P Quem for o cliente precisa de autorização para conectar no servidor?
+R Não
+
+P Existem modos de jogo? Jogar sozinho contra bot, jogar dentro de um timer, melhor de 3
+R não, termina quando todos os barcos são destruídos
+
+P Qual o tamanho máximo de grid?
+R 15
+
+P Quem escolhe o tamanho? O servidor?
+R Quem for o servidor
+
+P Ambos podem ser servidor ou cliente?
+R Sim
+
+P Após conexão, ambos os jogadores devem informar que estão prontos para começar?
+R sim
+
+P Quanto tempo os jogadores têm para colocar os barquinhos?
+R Não tempo, começa quando tiver todos os barcos posicionados
+
+P a partida tem tempo?
+R Nao
+
+P existe tempo para realizar a jogada?
+R Nao
+
+P o jogador deve selecionar e confirmar ou apenas selecionar a posição?
+R Clicou atirou
+
+P um campo já atacado deve ficar bloqueado?
+R Nao
+
+P ao terminar, dar opção de jogar novamente ou alguma outra?
+R Não, precisa de nova conexao
+
+P design no jogo?
+R Interface amigável
+++ utilizar o mouse pra disparar
+++ Visualizar os próprios navios
+++ Não usar cor que agrida
