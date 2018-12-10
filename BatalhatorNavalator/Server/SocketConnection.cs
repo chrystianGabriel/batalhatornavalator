@@ -10,36 +10,31 @@ namespace BatalhatorNavalator
 {
     public class SocketConnection
     {
-        private Socket _Socket { get; set; }
+        protected Socket _Socket { get; set; }
         public string Ip { get; set; }
         public int Port { get; set; }
+        public static SocketConnection Instance { get; private set; } = null;
 
-        public SocketConnection(int port)
+        protected SocketConnection(int port)
         {
             Port = port;
+            string auxIp = "";
+            foreach (IPAddress addr in Dns.GetHostAddresses(Dns.GetHostName()))
+            {
+                if (addr.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    auxIp = addr.ToString();
+                    break;
+                }
+            }
+            Ip = auxIp;
+            Instance = this;
         }
-
-        public SocketConnection(string ip, int port)
+        protected SocketConnection(string ip, int port)
         {
             Ip = ip;
             Port = port;
-        }
-
-        public void StartServer()
-        {
-            Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            listener.Bind(new IPEndPoint(IPAddress.Any, Port));
-            listener.Listen(1);
-            _Socket = listener.Accept();
-        }
-
-        public void ConnectToServer()
-        {
-            IPHostEntry ipHost = Dns.Resolve(Ip);
-            IPAddress ipAddress = ipHost.AddressList[0];
-            IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, Port);
-            _Socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            _Socket.Connect(ipEndPoint);
+            Instance = this;
         }
 
         public string GetMessage()

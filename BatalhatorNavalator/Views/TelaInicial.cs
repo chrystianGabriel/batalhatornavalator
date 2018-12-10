@@ -16,25 +16,23 @@ namespace BatalhatorNavalator
         public int Tamanho { set; get; }
         public string Nome { set; get; }
         public Servidor Conexao { set; get; }
+
+        public static Form ObjTelaInicial { get; private set; } = null;
+
         public TelaInicial()
         {
             InitializeComponent();
             this.Conexao = new Servidor();
+            ObjTelaInicial = this;
         }
-
 
         private void btnCriarPartida_Click(object sender, EventArgs e)
         {
             TelaCriarPartida CriarPartida = new TelaCriarPartida();
-            CriarPartida.ShowDialog();
-            this.Tamanho = CriarPartida.Tamanho;
+            CriarPartida.ShowDialog(this);
+            /*this.Tamanho = CriarPartida.Tamanho;
             this.Nome = CriarPartida.Nome;
-            this.Conexao.CriarConexao();
-            this.Close();
-
-
-            
-            
+            this.Conexao.CriarConexao();*/
         }
 
         private void btnEntrarPartida_Click(object sender, EventArgs e)

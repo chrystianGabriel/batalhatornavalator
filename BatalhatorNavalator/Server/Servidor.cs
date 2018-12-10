@@ -8,9 +8,34 @@ using System.Threading.Tasks;
 
 namespace BatalhatorNavalator.Server
 {
-    public class Servidor
+    public class Servidor : SocketConnection
     {
-        public Socket conexao { get; set; }
+        public Servidor(int port)
+            :base(port)
+        {
+
+        }
+
+        public bool StartServer()
+        {
+            try
+            {
+                Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                listener.Bind(new IPEndPoint(IPAddress.Any, Port));
+                listener.Listen(1);
+                Console.WriteLine("Aguardando clientes");
+                _Socket = listener.Accept();
+                Console.WriteLine("Conectado");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Falha ao contectar");
+                return false;
+            }
+        }
+
+        /*public Socket conexao { get; set; }
         public void CriarConexao()
         {
             Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -32,7 +57,7 @@ namespace BatalhatorNavalator.Server
             conexao = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             conexao.Connect(ipEndPoint);
             Console.WriteLine("Successfully connected to {0}", conexao.RemoteEndPoint);
-        }
+        }*/
 
     }
 }

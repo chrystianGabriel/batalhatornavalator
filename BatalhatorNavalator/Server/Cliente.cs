@@ -8,19 +8,21 @@ using System.Threading.Tasks;
 
 namespace BatalhatorNavalator.Server
 {
-    class Cliente
+    public class Cliente : SocketConnection
     {
-        private Socket conexao;
-
-        public void Conectar(string ip)
+        public Cliente(string ip, int port)
+            :base(ip, port)
         {
-            IPHostEntry ipHost = Dns.Resolve("192.168.51.136");
+            
+        }
+
+        public void ConnectToServer()
+        {
+            IPHostEntry ipHost = Dns.Resolve(Ip);
             IPAddress ipAddress = ipHost.AddressList[0];
-            IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, 2112);
-            Console.WriteLine("Starting: Creating Socket object");
-            conexao = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            conexao.Connect(ipEndPoint);
-            Console.WriteLine("Successfully connected to {0}", conexao.RemoteEndPoint);
+            IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, Port);
+            _Socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            _Socket.Connect(ipEndPoint);
         }
     }
 }

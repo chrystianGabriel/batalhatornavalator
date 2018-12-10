@@ -19,6 +19,7 @@ namespace BatalhatorNavalator.Views
         public int Tamanho { set; get; }
         public string Nome { set; get; }
         public string IP { set; get; }
+
         public TelaCriarPartida()
         {
             InitializeComponent();
@@ -26,24 +27,32 @@ namespace BatalhatorNavalator.Views
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-           this.Tamanho = Convert.ToInt32(nudTamanho.Value);
-           this.Nome = txtBoxNome.Text;
-           string ip = "";
-
-           foreach(IPAddress addr in Dns.GetHostAddresses(Dns.GetHostName()))
-            {
-                if(addr.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    ip = addr.ToString();
-                }
-            }
-
-            this.IP = ip;
+            int tamanho = Convert.ToInt32(nudTamanho.Value);
+            this.Close();
             TelaDeAguardo telaDeAguardo = new TelaDeAguardo(this.IP, this.Nome);
             telaDeAguardo.Show();
-            this.Close();
-
+            telaDeAguardo.Teste();
             
+
+
+            /*this.Tamanho = Convert.ToInt32(nudTamanho.Value);
+            this.Nome = txtBoxNome.Text;
+            string ip = "";
+
+            foreach(IPAddress addr in Dns.GetHostAddresses(Dns.GetHostName()))
+             {
+                 if(addr.AddressFamily == AddressFamily.InterNetwork)
+                 {
+                     ip = addr.ToString();
+                 }
+             }
+
+             this.IP = ip;
+             TelaDeAguardo telaDeAguardo = new TelaDeAguardo(this.IP, this.Nome);
+             telaDeAguardo.Show();
+             this.Close();*/
+
+
 
 
 
