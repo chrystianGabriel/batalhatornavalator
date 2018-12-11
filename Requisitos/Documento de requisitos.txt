@@ -2,17 +2,20 @@
 ** ST01: Criar uma conexão TCP entre 2 máquinas na mesma rede;
 ** ST02: Criar mecanismo para que o cliente possa se conectar ao servidor;
 
-+ REQ02: Cada jogador posicionará suas armas para dar incício à partida
-** ST01: Criar mecanismo para possibilitar o jogador de posicionar as suas armas no tabuleiro;
++ REQ02: O jogador que cria a partida (servidor) escolhe qual o tamanho do tabuleiro. Este deve ser no mínimo 15x15
+** ST01: Implementar mecanismo para criação do tabuleiro dinamicamente
 
-+ REQ03: O primeiro jogador a realizar a jogada deve ser decidido através de um jogo de "Par ou Impar"
++ REQ03: Cada jogador posicionará suas armas para dar incício à partida. As armas devem ser posicionadas utilizando o mouse;
+** ST01: Criar mecanismo para possibilitar o jogador de posicionar as suas armas com o mouse no tabuleiro;
+
++ REQ04: O primeiro jogador a realizar a jogada deve ser decidido através de um jogo de "Par ou Impar"
 ** ST01: Criar um mecanismo para realizar um jogo de "Par ou Impar" entre os jogadores através da rede;
 
-+ REQ04: Para atacar, o jogador irá fornecer o valor da linha e coluna que deseja atacar. Caso erre o tiro, este deve ser informado que acertou em água. Caso acerte o tiro mas não afunde o barco, este deve ser informado que acertou. Caso acerte o tiro e afunde um barco, este deve ser inforamado que o barco X foi afundado;
++ REQ05: Para atacar, o jogador irá fornecer o valor da linha e coluna que deseja atacar. Caso erre o tiro, este deve ser informado que acertou em água. Caso acerte o tiro mas não afunde o barco, este deve ser informado que acertou. Caso acerte o tiro e afunde um barco, este deve ser inforamado que o barco X foi afundado;
 ** ST01: Criar mecanimo de troca de mensagens entre as 2 máquinas;
 
-+ REQ05: Quando o jogador erra o tiro, passa a vez para o adversário;
++ REQ06: Quando o jogador erra o tiro, passa a vez para o adversário;
 ** ST01: Implementar um sistema de turnos, onde um jogador deve esperar o outro realizar a jogada para poder jogar;
 
-+ REQ06: O jogo termina quando todas as armas forem destruídas.
++ REQ07: O jogo termina quando todas as armas forem destruídas.
 ** ST01: Finalizar o jogo quando todas as armas forem destruidas.
